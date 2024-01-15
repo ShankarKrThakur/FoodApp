@@ -1,0 +1,42 @@
+App.Js Learning  -> 1
+
+/*
+const parent = React.createElement("div", {id:"parent"},[React.createElement("div", {id:"child"},[React.createElement("h1", {id:"container"},"Hello I am Learning React"), React.createElement("h1", {id:"abc"},"Hello I am Learning ")]),React.createElement("div", {id:"child1"},[React.createElement("h1", {id:"container"},"Hello I am Learning React"), React.createElement("h1", {id:"abc"},"Hello I am Learning ")])]); */
+//const heading = React.createElement("h1", {id:"container", xyz:"abc"}, "hello world from React");
+
+//JSX (transpiled before it reaches the JS) - Parcel - Babel
+
+//JSX => React.createElement => React Element - JS object => HTMLElement(render)
+
+const elem = <span>Hello React</span>
+
+//React Element or JSX
+const JSXheading = (<h1 className="head">
+    {elem}
+    Hello World using JSX 
+    </h1>);
+
+//React Functional Component
+const HeadingComponent = () =>{
+    return <h1>Namaste React</h1>
+}
+
+const number = 1000;
+
+//Component Composition
+const HeadingComponent2 = () => (
+    <div id="container">
+        <HeadingComponent/>
+        <h2>{number}</h2> 
+        {HeadingComponent()}
+        {JSXheading} 
+        
+        <HeadingComponent></HeadingComponent>
+        <h1 className="Heading">Namaste React 1</h1>
+    </div>
+)
+
+console.log(JSXheading); //object
+const root = ReactDOM.createRoot(document.getElementById("root"));
+//root.render(JSXheading);  // --> to render element
+root.render(<HeadingComponent2/>) // --> to render functional Component
