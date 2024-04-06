@@ -6,10 +6,10 @@ const styleCard =  {
 
 const RestuarantCard = (props) => {
     const {image} = props;
-   // console.log(image);
+   console.log(image);
     
     return(
-        <div className="res-card m-4 p-4 w-[250px] rounded-lg bg-gray-100 hover:bg-gray-200" >
+        <div className="res-card m-4 p-4 w-[250px] h-[480px] rounded-lg bg-gray-100 hover:bg-gray-200" >
             <img className="res-logo rounded-lg" alt="res-logo" src={
                 CDN_URL +image.id1
                 }
